@@ -1,0 +1,509 @@
+:root {
+    color-scheme: dark;
+    --bg: #00040a;
+    --panel: #020a17;
+    --panel-strong: #031423;
+    --red: #1780ff;
+    --red-dark: #05468d;
+    --red-soft: #4aa2ff;
+    --text: #2093ff;
+    --muted: #3462b5;
+    --line: rgba(23, 128, 255, 0.28);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    background: var(--bg);
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: radial-gradient(circle at 50% 20%, rgba(0, 110, 255, 0.18), transparent 36rem), linear-gradient(180deg, #010a16 0%, #00050a 58%, #000 100%);
+}
+
+.page {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 42px 0 56px;
+}
+
+.hero {
+    min-height: 56vh;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+}
+
+.tag {
+    margin: 0 0 18px;
+    font-size: clamp(2.2rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 0;
+    color: var(--red);
+    text-shadow: 0 0 24px rgba(0, 110, 255, 0.72);
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(3.2rem, 11vw, 9rem);
+    line-height: 0.92;
+    letter-spacing: 0;
+    color: var(--red);
+    text-shadow: 0 0 18px rgba(0, 110, 255, 0.7), 0 0 60px rgba(0, 110, 255, 0.35);
+}
+
+.tag {
+    margin: 0 0 18px;
+    font-size: clamp(2.2rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 0;
+    color: var(--red);
+    text-shadow: 0 0 24px rgba(0, 110, 255, 0.72);
+    animation: glowPulse 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+    from {
+        text-shadow: 0 0 22px rgba(0, 110, 255, 0.7), 0 0 78px rgba(0, 110, 255, 0.35);
+    }
+    to {
+        text-shadow: 0 0 28px rgba(0, 110, 255, 0.86), 0 0 96px rgba(0, 110, 255, 0.58);
+    }
+}
+
+.about {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 340px);
+    gap: 32px;
+    align-items: center;
+    padding: 56px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.about-copy {
+    max-width: 620px;
+}
+
+.label,
+.role {
+    color: var(--red-soft);
+    font-size: 0.86rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0;
+}
+
+h2 {
+    margin: 10px 0 14px;
+    color: var(--red);
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1;
+}
+
+/* Tighter, multi-line styling for the About section heading */
+
+.about-copy h2 {
+    margin: 4px 0 10px;
+    color: var(--red);
+    font-size: clamp(1rem, 1.6vw, 1.4rem);
+    line-height: 1.3;
+    font-weight: 700;
+    max-width: 60ch;
+    white-space: normal;
+    word-break: break-word;
+    hyphens: auto;
+    text-align: left;
+    letter-spacing: -0.01em;
+}
+
+@media (min-width: 900px) {
+    .about-copy h2 {
+        font-size: 1.8rem;
+    }
+}
+
+p {
+    color: var(--muted);
+    font-size: 1.08rem;
+    line-height: 1.7;
+}
+
+.emblem {
+    width: 100%;
+    max-width: 340px;
+    justify-self: end;
+    filter: drop-shadow(0 0 26px rgba(0, 110, 255, 0.45));
+}
+
+.members {
+    padding: 48px 0 0;
+}
+
+.member-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 18px;
+}
+
+.member {
+    min-height: 120px;
+    display: grid;
+    align-content: center;
+    gap: 10px;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--panel-strong), var(--panel));
+    box-shadow: inset 0 0 30px rgba(0, 110, 255, 0.05);
+}
+
+.member strong {
+    color: var(--red);
+    font-size: clamp(1.8rem, 5vw, 3.3rem);
+    line-height: 1;
+    overflow-wrap: anywhere;
+}
+
+.owner {
+    border-color: rgba(23, 128, 255, 0.58);
+    box-shadow: inset 0 0 30px rgba(0, 110, 255, 0.08), 0 0 28px rgba(0, 110, 255, 0.12);
+}
+
+.audio-player {
+    padding: 48px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.audio-player audio {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin-top: 18px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(23, 0, 0, 0.98), rgba(40, 0, 0, 0.95));
+    border: 1px solid rgba(23, 128, 255, 0.55);
+    box-shadow: 0 6px 40px rgba(23, 128, 255, 0.14), inset 0 0 30px rgba(0, 110, 255, 0.03);
+    color: var(--text);
+    accent-color: var(--red);
+}
+
+.audio-player audio::-webkit-media-controls-panel {
+    background: linear-gradient(90deg, rgba(30, 0, 0, 0.96), rgba(10, 0, 0, 0.9));
+    border-radius: 14px;
+}
+
+.audio-player audio::-webkit-media-controls-play-button,
+.audio-player audio::-webkit-media-controls-volume-slider,
+.audio-player audio::-webkit-media-controls-current-time-display,
+.audio-player audio::-webkit-media-controls-time-remaining-display,
+.audio-player audio::-webkit-media-controls-timeline {
+    color: var(--text);
+}
+
+.audio-player audio::-webkit-media-controls-timeline {
+    background: linear-gradient(90deg, rgba(23, 128, 255, 0.65), rgba(23, 128, 255, 0.25));
+    border-radius: 999px;
+    height: 6px;
+    min-height: 6px;
+}
+
+.audio-player audio::-webkit-media-controls-timeline-container {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+}
+
+.audio-player audio::-webkit-media-controls-timeline-container::before {
+    background: rgba(23, 128, 255, 0.25);
+}
+
+/* attempt to color the play button and controls in WebKit browsers */
+
+.audio-player audio::-webkit-media-controls-play-button {
+    background: var(--red) !important;
+    color: #fff !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 18px rgba(23, 128, 255, 0.45) !important;
+}
+
+/* Firefox range/progress styling */
+
+audio::-moz-range-progress {
+    background: var(--red);
+}
+
+audio::-moz-range-track {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.audio-player .label {
+    color: var(--red-soft);
+    text-transform: uppercase;
+    letter-spacing: 0;
+}
+
+/* Custom audio UI */
+
+.audio-player audio {
+    display: none;
+    /* hide native controls */
+}
+
+.audio-ui {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    max-width: 640px;
+    margin-top: 12px;
+}
+
+.play-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--red);
+    color: #fff;
+    border: none;
+    display: grid;
+    place-items: center;
+    font-size: 1.1rem;
+    box-shadow: 0 8px 30px rgba(23, 128, 255, 0.28);
+    cursor: pointer;
+}
+
+.play-btn.paused {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--red);
+    border: 1px solid rgba(23, 128, 255, 0.16);
+}
+
+.progress-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 999px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-filled {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--red), var(--red-soft));
+    border-radius: 999px;
+    transition: width 120ms linear;
+}
+
+.time {
+    color: var(--muted);
+    font-size: 0.95rem;
+    min-width: 110px;
+    text-align: right;
+}
+
+.progress-bar:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.about-me {
+    padding: 48px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.social {
+    padding: 32px 0 8px;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.social-links a {
+    color: #8bb8ff;
+    text-decoration: none;
+    padding: 12px 18px;
+    border: 1px solid rgba(23, 128, 255, 0.3);
+    border-radius: 999px;
+    background: rgba(23, 128, 255, 0.07);
+    transition: background 180ms ease, transform 180ms ease;
+}
+
+.social-links a:hover {
+    background: rgba(23, 128, 255, 0.18);
+    transform: translateY(-1px);
+}
+
+.about-me-content {
+    display: grid;
+    gap: 24px;
+}
+
+.about-me-content h2 {
+    margin: 0;
+}
+
+.info-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 16px;
+    align-items: start;
+    padding: 16px;
+    background: linear-gradient(135deg, var(--panel-strong), var(--panel));
+    border: 1px solid var(--line);
+    border-radius: 8px;
+}
+
+.info-label {
+    color: var(--red-soft);
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.info-value {
+    color: var(--text);
+    font-size: 1rem;
+}
+
+/* Responsive: improve layout and typography on small screens */
+
+@media (max-width: 900px) {
+    .page {
+        padding: 24px 16px;
+    }
+    .hero {
+        min-height: 40vh;
+        padding: 24px 0;
+    }
+    .tag {
+        font-size: clamp(1.6rem, 10vw, 3rem);
+    }
+    h1 {
+        font-size: clamp(2rem, 11vw, 4rem);
+        line-height: 1.02;
+        word-break: keep-all;
+    }
+    .about {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .emblem {
+        max-width: 260px;
+        justify-self: center;
+        margin-top: 6px;
+    }
+    .member-list {
+        grid-template-columns: 1fr;
+    }
+    .member {
+        min-height: 84px;
+        padding: 16px;
+    }
+    .about-me {
+        padding: 28px 0;
+    }
+    .audio-ui {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    .play-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 1rem;
+    }
+    .progress-wrap {
+        width: 100%;
+    }
+    .time {
+        font-size: 0.92rem;
+        text-align: right;
+        min-width: 0;
+    }
+    .social-links {
+        gap: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .social-links a {
+        padding: 10px 14px;
+    }
+}
+
+@media (max-width: 420px) {
+    .page {
+        padding: 18px 12px;
+    }
+    .tag {
+        font-size: clamp(1.2rem, 12vw, 2.2rem);
+    }
+    h1 {
+        font-size: clamp(1.6rem, 14vw, 2.8rem);
+    }
+    .about-copy h2 {
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+}
+
+.skills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.skill {
+    padding: 8px 14px;
+    background: rgba(23, 128, 255, 0.15);
+    border: 1px solid var(--red-dark);
+    border-radius: 6px;
+    color: var(--red-soft);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+}
+
+@media (max-width: 720px) {
+    .page {
+        width: min(100% - 24px, 1120px);
+        padding-top: 28px;
+    }
+    .hero {
+        min-height: 52vh;
+    }
+    .about,
+    .member-list {
+        grid-template-columns: 1fr;
+    }
+    .emblem {
+        justify-self: start;
+        max-width: 280px;
+        .info-item {
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+    }
+}
